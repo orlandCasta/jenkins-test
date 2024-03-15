@@ -7,14 +7,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/orlandCasta/jenkins-test'
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         sshagent(['ssh-agent']) {
-        //             //sh 'ssh -tt -o StrictHostKeyChecking=no ubuntu@3.138.118.117 ls'
-        //             sh "scp -r ./* ubuntu@3.138.118.117:/home/ubuntu"
-        //         }
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                sshagent(['ssh-agent']) {
+                    //sh 'ssh -tt -o StrictHostKeyChecking=no ubuntu@3.138.118.117 ls'
+                    sh "scp -r ./* ubuntu@3.133.148.116:/home/ubuntu"
+                }
+            }
+        }
         // stage('Run Server') {
         //     steps {
         //         // Connect to the server via SSH and start your Node.js application
