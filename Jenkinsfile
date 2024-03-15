@@ -10,8 +10,8 @@ pipeline {
         stage('Build') {
             steps {
                 sshagent(['ssh-agent']) {
-                    sh 'ssh -tt -o StrictHostKeyChecking=no ubuntu@3.133.148.116 ls'
-                    //sh "scp -r ./* ubuntu@3.133.148.116:/home/ubuntu"
+                    //sh 'ssh -tt -o StrictHostKeyChecking=no ubuntu@3.133.148.116 ls'
+                    sh "scp -r ./* ubuntu@3.133.148.116:/home/ubuntu"
                 }
             }
         }
