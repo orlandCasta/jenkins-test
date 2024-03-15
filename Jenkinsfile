@@ -15,16 +15,16 @@ pipeline {
                 }
             }
         }
-        // stage('Run Server') {
-        //     steps {
-        //         // Connect to the server via SSH and start your Node.js application
-        //         script {
-        //             sshagent(['ssh-agent']) {
-        //                 // sh "ssh ubuntu@52.14.61.66 'cd /home/ubuntu && yarn install && node server.js'"
-        //                 sh "ssh ubuntu@3.138.118.117 'whoami && node --version && ls'"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Run Server') {
+            steps {
+                // Connect to the server via SSH and start your Node.js application
+                script {
+                    sshagent(['ssh-agent']) {
+                        // sh "ssh ubuntu@52.14.61.66 'cd /home/ubuntu && yarn install && node server.js'"
+                        sh "ssh ubuntu@3.133.148.116 'whoami && node --version && ls'"
+                    }
+                }
+            }
+        }
     }
 }
